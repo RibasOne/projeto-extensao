@@ -8,7 +8,7 @@
 }
 
 header{
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(/assets/bkimg.jpeg);
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../assets/bkimg.jpeg);
 }
 
 body{
@@ -98,7 +98,7 @@ a{
 .agenda {
     padding: 2rem 2rem 0 2rem;
     text-align: center;
-    background-image: url(/assets/bkimg.jpeg);
+    background-image: url(../assets/bkimg.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;

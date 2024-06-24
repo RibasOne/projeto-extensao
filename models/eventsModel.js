@@ -6,7 +6,7 @@ const eventSchema = new mongoose.Schema({
     date: {
         type: Date,
         get: (date) => {
-            return date.toISOString().split('T')[0]; // Formata a data como 'aaaa-mm-dd'
+            return date.toISOString().split('T')[0];
         }
     },
     time: String

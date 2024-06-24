@@ -11,7 +11,7 @@
     <main>
         <section class="admin">
             <h2 class="title">Adicionar Evento</h2>
-            <form id="addEventForm" action="/eventos/adicionar-evento" method="POST">
+            <form id="addEventForm" action="/events/create" method="POST">
                 <div class="form-group">
                     <label for="eventName">Nome do Evento:</label>
                     <input type="text" id="eventName" name="eventName" required>
@@ -31,6 +31,12 @@
                 <button type="submit" class="btn">Adicionar Evento</button>
             </form>
         </section>
+        <section id="events">
+            <h2 class="title">Eventos</h2>
+            <ul class="event-box" id="adminEventList">
+            </ul>
+        </section>
     </main>
+    <script src="../js/script.js"> <code>console.log('DOM completamente carregado e analisado');</code></script>
 </body>
 </html>

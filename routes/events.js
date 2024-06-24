@@ -3,6 +3,7 @@ const router = express.Router();
 const eventController = require('../controllers/eventController');
 
 router.get('/', eventController.getAllEvents);
-router.post('/adicionar-evento', eventController.addEvent);
+router.post('/create', eventController.addEvent);
+router.delete('/delete/:id', eventController.deleteEvent);
 
 module.exports = router;

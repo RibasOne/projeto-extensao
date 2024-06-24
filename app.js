@@ -1,11 +1,13 @@
 const express = require('express');
 const session = require('express-session');
+const connectDB = require('./config/database');
 const path = require('path');
 const bodyParser = require('body-parser');
 
 const app = express();
+connectDB();
 
-// importing routes
+// Importing routes
 const indexRoutes = require('./routes/index');
 const adminRoutes = require('./routes/admin');
 const loginRoutes = require('./routes/login');
@@ -17,15 +19,20 @@ app.use(session({
     saveUninitialized: true
 }));
 
+// Middleware for static files
 app.use(express.static(path.join(__dirname, 'public')));
+// Middleware for parsing body
 app.use(bodyParser.urlencoded({ extended: true }));
+// Middleware for parsing JSON
+app.use(bodyParser.json());
 
-// using routes
+// Using routes
 app.use('/', indexRoutes);
 app.use('/admin', adminRoutes);
 app.use('/login', loginRoutes);
-app.use('/eventos', eventRoutes);
+app.use('/events', eventRoutes);
 
+// Init server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

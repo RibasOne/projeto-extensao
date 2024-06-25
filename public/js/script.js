@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Função para listar eventos na index.html
     const eventListElement = document.getElementById('eventList');
     if (eventListElement) {
-        // console.log('Index page');
         fetch('/events')
             .then(response => response.json())
             .then(events => {
@@ -52,10 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     }
 
-    // Função para listar eventos na admin.html
     const adminEventListElement = document.getElementById('adminEventList');
     if (adminEventListElement) {
-        // console.log('Admin page');
         fetch('/events')
             .then(response => response.json())
             .then(events => {

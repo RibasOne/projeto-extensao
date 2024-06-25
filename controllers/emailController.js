@@ -5,7 +5,7 @@ exports.sendEmail = (req, res) => {
 
     const mailOptions = {
         from: 'Contato WebSite: <transportnodemailer@gmail.com>',
-        to: 'ribasplayergames@gmail.com',
+        to: 'flaviomagicodebc@gmail.com',
         subject: `Nova Mensagem de ${nome}`,
         html: `<h1>Nova mensagem de ${nome}</h1><p>Email: ${subject}</p><p>Mensagem: ${mensagem}</p>`,
         text: `Nova mensagem de ${nome}\nEmail: ${subject}\nMensagem: ${mensagem}`,

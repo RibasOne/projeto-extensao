@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navMenu.classList.remove('active');
         }));
 
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             navMenu.classList.remove('active');
         });
     } else {
@@ -34,15 +34,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     const li = document.createElement('li');
                     li.className = 'event';
                     li.innerHTML = `
-                        <div class="event-text">
-                            <h3>Flávio o Mágico em: ${event.name}</h3>
-                            <p>Local: ${event.location}</p>
-                        </div>
-                        <div class="event-date">
-                            <p>Data: ${event.date}</p>
-                            <p>Horário: ${event.time}</p>
-                        </div>
-                    `;
+                    <div class="event-text">
+                        <h3>Flávio o Mágico em: ${event.name}</h3>
+                        <p>Local: ${event.location}</p>
+                    </div>
+                    <div class="event-date">
+                        <p>Data: ${event.date}</p>
+                        <p>Horário: ${event.time}</p>
+                        <a href="#contact" class="btn">Ingresso</a>
+                    </div>
+                `;
                     eventListElement.appendChild(li);
                 });
             })
@@ -64,24 +65,22 @@ document.addEventListener('DOMContentLoaded', function() {
                     const li = document.createElement('li');
                     li.className = 'event';
                     li.innerHTML = `
-                        <div class="event-text">
-                            <h3>Flávio o Mágico em: ${event.name}</h3>
-                            <p>Local: ${event.location}</p>
-                        </div>
-                        <div class="event-date">
-                            <p>Data: ${event.date}</p>
-                            <p>Horário: ${event.time}</p>
-                        </div>
-                        <button class="btn btn-danger" onclick="deleteEvent('${event._id}')">Deletar</button>
-                    `;
+                    <div class="event-text">
+                        <h3>Flávio o Mágico em: ${event.name}</h3>
+                        <p>Local: ${event.location}</p>
+                    </div>
+                    <div class="event-date">
+                        <p>Data: ${event.date}</p>
+                        <p>Horário: ${event.time}</p>
+                    </div>
+                    <button class="btn btn-danger" onclick="deleteEvent('${event._id}')">Deletar</button>
+                `;
                     adminEventListElement.appendChild(li);
                 });
             })
             .catch(error => {
                 console.error('Erro ao buscar eventos:', error);
             });
-    } else {
-        // console.log('Elemento adminEventList não encontrado');
     }
 });
 
@@ -100,3 +99,33 @@ function deleteEvent(eventId) {
         console.error('Erro ao deletar evento:', error);
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    let bannerList = document.querySelector(".card-img");
+    let bannerItems = document.querySelectorAll(".card-img li");
+    let currentIdx = 0;
+
+    setInterval(function () {
+        currentIdx = (currentIdx + 1) % bannerItems.length;
+        bannerList.style.transform = "translateX(-" + (currentIdx * 100) + "%)";
+    }, 5000);
+});
+
+$(document).ready(function () {
+    var bannerList = $('.banner-list');
+    var listItem = $('.banner-list li');
+    var totalItems = listItem.length;
+    var currentIndex = 0;
+    var itemWidth = $('.banner-list li').width();
+
+    function rotateBanner() {
+        currentIndex++;
+        if (currentIndex >= totalItems) {
+            currentIndex = 0;
+        }
+        var newPosition = -1 * itemWidth * currentIndex;
+        bannerList.css('transform', 'translateX(' + newPosition + 'px)');
+    }
+
+    setInterval(rotateBanner, 3000);
+});

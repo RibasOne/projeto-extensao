@@ -156,6 +156,7 @@ a {
 
     .gallery {
         display: none;
+        flex-wrap: wrap;
     }
 
     .gallery-mobile {
@@ -184,6 +185,11 @@ a {
     }
 
     .event-box {
+        min-width: 100%;
+    }
+
+    .bio-box {
+        margin: 0 auto;
         min-width: 100%;
     }
 }
@@ -320,32 +326,23 @@ a {
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    width: 70%;
+    justify-content:baseline;
     gap: 1rem;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0 auto;
+}
+
+.gallery img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
 }
 
 .card-img {
-    width: 300px;
-    height: 300px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.card-img a img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.7;
-    transition: 0.3s;
-}
-
-.card-img img:hover {
-    opacity: 1;
-    transform: scale(1.1);
+    flex: 1 0 200px;
 }
 
 .gallery-mobile {

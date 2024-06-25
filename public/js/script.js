@@ -97,32 +97,25 @@ function deleteEvent(eventId) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    let bannerList = document.querySelector(".card-img");
-    let bannerItems = document.querySelectorAll(".card-img li");
-    let currentIdx = 0;
+$(document).ready(function() {
+    let currentIndex = 0;
+    const items = $('.banner-list li');
+    const itemAmt = items.length;
 
-    setInterval(function () {
-        currentIdx = (currentIdx + 1) % bannerItems.length;
-        bannerList.style.transform = "translateX(-" + (currentIdx * 100) + "%)";
-    }, 5000);
-});
-
-$(document).ready(function () {
-    var bannerList = $('.banner-list');
-    var listItem = $('.banner-list li');
-    var totalItems = listItem.length;
-    var currentIndex = 0;
-    var itemWidth = $('.banner-list li').width();
-
-    function rotateBanner() {
-        currentIndex++;
-        if (currentIndex >= totalItems) {
-            currentIndex = 0;
-        }
-        var newPosition = -1 * itemWidth * currentIndex;
-        bannerList.css('transform', 'translateX(' + newPosition + 'px)');
+    function cycleItems() {
+        const item = $('.banner-list li').eq(currentIndex);
+        items.hide();
+        item.css('display', 'block');
     }
 
-    setInterval(rotateBanner, 3000);
+    function autoSlide() {
+        currentIndex += 1;
+        if (currentIndex > itemAmt - 1) {
+            currentIndex = 0;
+        }
+        cycleItems();
+    }
+
+    setInterval(autoSlide, 3000); // Altere o intervalo conforme necessário
+    cycleItems(); // Inicializa o ciclo
 });

@@ -349,6 +349,52 @@ a {
     display: none;
 }
 
+@media (max-width: 768px) {
+    .agenda {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .agenda-text {
+        max-width: none;
+        width: auto;
+    }
+    #tioNeto {
+        max-width: 100%;
+    }
+    .gallery{
+        display: none;
+    }
+
+    .gallery-mobile {
+        max-width: 768px;
+        overflow: hidden;
+        display: block;
+      }
+      
+      .banner-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      
+      .banner-list li {
+        flex: 0 0 100%;
+      }
+      
+      .banner-list li img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        border: 1px solid #fff;
+      } 
+      .bio-box{
+        min-width: 100%;
+      }
+}
+
 .formulary {
     padding: 2rem;
     background-color: #262626;

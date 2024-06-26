@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     li.className = 'event';
                     li.innerHTML = `
                     <div class="event-text">
-                        <h3>Flávio o Mágico em: ${event.name}</h3>
+                        <h3>Flávio o Mágico em ${event.name}</h3>
                         <p>Local: ${event.location}</p>
                     </div>
                     <div class="event-date">
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     li.className = 'event';
                     li.innerHTML = `
                     <div class="event-text">
-                        <h3>Flávio o Mágico em: ${event.name}</h3>
+                        <h3>Flávio o Mágico em ${event.name}</h3>
                         <p>Local: ${event.location}</p>
                     </div>
                     <div class="event-date">

@@ -74,21 +74,26 @@ a {
     color: rgb(219, 235, 0);
 }
 
-@media(max-width:852px) {
+@media (max-width: 852px) {
     .hamburger {
         display: block;
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        cursor: pointer;
     }
 
     .nav-menu {
         position: fixed;
         right: -100%;
-        top: 70px;
+        top: 60px; /* Ajuste para garantir que a navbar não sobreponha o cabeçalho */
         gap: 0;
         flex-direction: column;
         background-color: #262626;
         width: 100%;
         text-align: center;
         transition: 0.3s;
+        z-index: 1; /* Certifique-se de que a navbar está acima de outros elementos */
     }
 
     .nav-item {
@@ -98,7 +103,16 @@ a {
     .nav-menu.active {
         right: 0;
     }
+
+    .logo {
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+        padding: 15px 0;
+    }
 }
+ 
+
 
 .agenda {
     padding: 2rem 2rem 0 2rem;
@@ -154,7 +168,7 @@ a {
 
     .gallery {
         display: none;
-        flex-wrap: wrap;
+       
     }
 
     .gallery-mobile {
@@ -354,6 +368,81 @@ a {
 }
 
 @media (max-width: 768px) {
+
+    #events {
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(45deg, rgba(211,211,211,1) 0%, rgba(155,170,175,1) 35%, rgba(65,90,100,1) 100%);
+        color: #fff;
+    }
+
+    .event-box {
+        width: 100%;
+        margin: 0 auto;
+        padding: 1rem 0;
+        text-align: left;
+    }
+
+    .event {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 20px;
+        transition: 0.5s;
+        align-items: center;
+        justify-content: center;
+        background-color: #262626;
+    }
+
+    .event .btn {
+        width: 100%;
+        margin: 1rem 0;
+        padding: 1rem;
+    }
+
+    .event-text {
+        flex: 1;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .event-text h3 {
+        font-size: 1.5rem;
+        color: rgb(219, 235, 0);
+    }
+
+    .event-text p {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+    }
+
+    .event-date {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    .event-date p {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+    }
+
+    .event-date .btn {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+
+
+
     .agenda {
         flex-direction: column;
         align-items: center;
@@ -396,6 +485,10 @@ a {
       } 
       .bio-box{
         min-width: 100%;
+        width: 100%;
+      }
+      .body{
+        width: 100%;
       }
 }
 

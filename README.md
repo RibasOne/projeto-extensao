@@ -4,7 +4,24 @@ Este é o README do projeto. Aqui você encontrará informações importantes so
 
 ## Descrição
 
-O projeto para o mágico Flávio é uma aplicação web que tem como objetivo facilitar a gestão da agenda do mágico, e uma forma de entrar em contato com ele. Ele poderá criar, acompanhar seus eventos e excluir diretamente em sua agenda. 
+O projeto para o mágico Flávio é uma aplicação web que tem como objetivo facilitar a gestão da agenda do mágico e oferecer uma forma de entrar em contato com ele. Ele poderá criar, acompanhar e excluir seus eventos diretamente em sua agenda.
+
+Este é um projeto de extensão universitária aplicado na disciplina de Programação Web sob orientação do professor Jhonatan Alves.
+
+## Tecnologias Utilizadas
+
+- Front-end
+1. HTML
+2. CSS
+3. JavaScript
+
+- Back-end
+1. Node.js
+2. Express.js
+3. Nodemailer
+
+- Banco de Dados
+1. MongoDB
 
 ## Instalação
 
@@ -20,9 +37,9 @@ Para instalar o projeto, siga as instruções abaixo:
 1. Autenticação de Usuário: Autentica usuários a partir do banco de dados.
 2. Administração de Eventos: Página para adicionar e deletar eventos.
 3. Listagem de Eventos: Lista eventos armazenados no banco de dados na página admin.html.
-4. Envio de Emails: Função para enviar emails organizada em controllers e routes.
+4. Envio de Emails: Função para enviar emails.
 
-## Como adicionar ou remover eventos na agenda
+## Como Adicionar ou Remover Eventos na Agenda
 
-1. Acessar a tela de admin através da URL e realizar login, `/admin` ou `/login`
-2. Os dados para logar no site foram enviado no arquivo IMPORTANTE.txt
+1. Acesse a tela de admin através da URL `/admin` ou `/login` e realize o login.
+2. Os dados para logar no site foram enviados no arquivo IMPORTANTE.txt.

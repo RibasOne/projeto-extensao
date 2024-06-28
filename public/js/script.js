@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // console.log('Hamburger menu elements not found');
     }
 
-    // Função para listar eventos na index.html
     const eventListElement = document.getElementById('eventList');
     if (eventListElement) {
         fetch('/events')
@@ -116,6 +115,6 @@ $(document).ready(function() {
         cycleItems();
     }
 
-    setInterval(autoSlide, 3000); // Altere o intervalo conforme necessário
-    cycleItems(); // Inicializa o ciclo
+    setInterval(autoSlide, 3000);
+    cycleItems();
 });
